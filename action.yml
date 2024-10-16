@@ -21,3 +21,4 @@ runs:
     - --output
     - ${{ inputs.output }}
     - ${{ inputs.verbose == 'true' && '--verbose' || '' }}
+    - ${{ inputs.version == 'true' && '--version' || '' }}

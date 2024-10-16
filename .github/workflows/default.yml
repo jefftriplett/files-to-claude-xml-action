@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  pull_request: {}
+  # pull_request: {}
 
 jobs:
   test-integration:
@@ -13,4 +13,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./
-      - run: /bin/uvx files-to-claude-xml --version
+        with:
+          version: true

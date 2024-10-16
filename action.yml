@@ -1,0 +1,23 @@
+name: 'Files to Claude XML'
+description: 'Convert files to XML format for Claude'
+inputs:
+  files:
+    description: 'Input files to process'
+    required: true
+    type: list
+  output:
+    description: 'Output XML file path'
+    required: false
+    default: '_claude.xml'
+  verbose:
+    description: 'Enable verbose output'
+    required: false
+    default: 'false'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ join(inputs.files, ' ') }}
+    - --output
+    - ${{ inputs.output }}
+    - ${{ inputs.verbose == 'true' && '--verbose' || '' }}

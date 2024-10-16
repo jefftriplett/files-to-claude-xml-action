@@ -13,6 +13,10 @@ inputs:
     description: 'Enable verbose output'
     required: false
     default: 'false'
+  version:
+    description: 'Display the version number'
+    required: false
+    default: 'false'
 runs:
   using: 'docker'
   image: 'Dockerfile'

@@ -4,6 +4,6 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 WORKDIR /app
 
-RUN uv pip install files-to-claude-xml
+RUN uv pip install --system files-to-claude-xml
 
 ENTRYPOINT ["/bin/uvx", "files-to-claude-xml"]

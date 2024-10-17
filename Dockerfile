@@ -1,5 +1,7 @@
 FROM ghcr.io/astral-sh/uv:bookworm-slim
 
+ENV UV_LINK_MODE=copy
+
 WORKDIR /app
 
 RUN --mount=type=cache,target=/root/.cache/uv \
